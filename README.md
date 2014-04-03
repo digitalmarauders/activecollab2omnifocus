@@ -15,3 +15,6 @@ AppleScript(s) and maybe other scripts in the future that gets tasks from active
 ## Roadmap
 - Project Mapping
 - Collect Due Dates
+
+## Credits
+- The Omni Group

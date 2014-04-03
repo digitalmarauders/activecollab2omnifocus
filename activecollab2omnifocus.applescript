@@ -1,4 +1,4 @@
--- Copyright 2014 The Omni Group.  All rights reserved.
+-- Copyright 2014 Digital Marauders.  All rights reserved.
 using terms from application "Mail"
   -- Trims "foo <foo@bar.com>" down to "foo@bar.com"
   on trim_address(theAddress)
