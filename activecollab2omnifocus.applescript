@@ -1,4 +1,4 @@
--- Copyright 2014 Digital Marauders.  All rights reserved.
+-- Copyright 2014 The Omni Group.  All rights reserved.
 using terms from application "Mail"
   -- Trims "foo <foo@bar.com>" down to "foo@bar.com"
   on trim_address(theAddress)
@@ -19,7 +19,7 @@ using terms from application "Mail"
       log "OmniFocus calling process_message in MailAction script"
     end tell
     set theSubject to subject of theMessage
-    if (theSubject contains "Task '" and theSubject contains "' has been Created") then
+    --if (theSubject contains "Task '" and theSubject contains "' has been Created") then
       set singleTask to true
       set offset1 to offset of "Task '" in theSubject
       set offset1 to offset1 + 6
@@ -27,7 +27,7 @@ using terms from application "Mail"
       set offset2 to offset2 - 1
       set taskTitle to ""
       copy characters 1 through offset2 of theSubject as string to taskTitle
-      set theText to taskTitle & return & content of theMessage
+      set theText to theSubject & return & content of theMessage
       tell application "OmniFocus"
         -- starting project lookup
         -- set projectList to the flattened projects of default document
@@ -38,7 +38,7 @@ using terms from application "Mail"
 
         parse tasks into default document with transport text theText as single task singleTask
       end tell
-    end if
+    --end if
   end process_message
   
   on perform mail action with messages theMessages
